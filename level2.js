@@ -7,7 +7,7 @@ let nombre1 = parseFloat(prompt("Veuillez saisir le premier nombre :"));
 let nombre2 = parseFloat(prompt("Veuillez saisir le deuxième nombre :"));
 let nombre3 = parseFloat(prompt("Veuillez saisir le troisième nombre :"));
 
-const plusGrand = Math.max(nombre1, nombre2, nombre3);
+let plusGrand = Math.max(nombre1, nombre2, nombre3); // Plus grand nombre parmi nombre1, nombre2, et nombre3
 
 console.log(`Le plus grand nombre est : ${plusGrand}`);
 
@@ -33,17 +33,17 @@ if (note >= 0 && note <= 4) {
 ///////////////////////////////////////////////////////////////////////////////
 
 // Exercice 3
-const N = parseInt(prompt("Veuillez saisir un nombre N :"));
+let n = parseInt(prompt("Veuillez saisir un nombre N :"));
 
-if (!isNaN(N)) {
+if (!isNaN(n)) {
     let somme = 0;
   
     // Calculer la somme de tous les nombres entre 1 et N
-    for (let i = 1; i <= N; i++) {
+    for (let i = 1; i <= n; i++) {
       somme += i;
     }
 
-    console.log(`La somme des nombres entre 1 et ${N} est : ${somme}`);
+    console.log(`La somme des nombres entre 1 et ${n} est : ${somme}`);
   } else {
     console.log("Veuillez saisir un nombre valide.");
 }  
@@ -54,6 +54,7 @@ if (!isNaN(N)) {
 let nombre = parseInt(prompt("Veuillez saisir un nombre :"));
 
 if (!isNaN(nombre)) {
+    // Boucle pour générer chaque ligne de la pyramide
     for (let i = 1; i <= nombre; i++) {
         let ligne = '*'.repeat(i);
         console.log(ligne);
@@ -68,11 +69,13 @@ if (!isNaN(nombre)) {
 let nombre5 = parseInt(prompt("Veuillez saisir un nombre :"));
 
 if (!isNaN(nombre5)) {
+    // Generation une pyramide d'étoiles ascendante 
     for (let i = 1; i <= nombre5; i++) {
         let ligne = '*'.repeat(i);
         console.log(ligne);
     }
 
+    // Generation une pyramide d'étoiles descendante 
     for (let i = nombre5 - 1; i >= 1; i--) {
         let ligne = '*'.repeat(i);
         console.log(ligne);
@@ -84,12 +87,13 @@ if (!isNaN(nombre5)) {
 ///////////////////////////////////////////////////////////////////////////////
 
 // Exercice 6
-const nombre6 = parseInt(prompt("Veuillez saisir un nombre :"));
+let nombre6 = parseInt(prompt("Veuillez saisir un nombre :"));
 
 if (!isNaN(nombre6)) {
+    // Génère une pyramide d'étoiles avec un nombre de lignes égal au nombre donnée
     for (let i = 1; i <= nombre6; i++) {
-        const espaces = ' '.repeat(nombre6 - i);
-        const etoiles = '*'.repeat(2 * i - 1);
+        let espaces = ' '.repeat(nombre6 - i);
+        let etoiles = '*'.repeat(2 * i - 1);
         console.log(espaces + etoiles);
     }
 } else {

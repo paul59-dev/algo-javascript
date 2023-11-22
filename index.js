@@ -1,3 +1,4 @@
+// Utilisation du pacckge prompt-sync pour la saisie de l'utilisateur
 const prompt = require('prompt-sync')();
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -8,6 +9,7 @@ function sommeTableau(tableau) {
       return 0; 
     }
   
+    // Utilisation de la méthode reduce pour calculer la somme des élément du tableau
     let somme = tableau.reduce(function(acc, valeur) {
       return acc + valeur;
     }, 0);
@@ -21,7 +23,6 @@ function sommeTableau(tableau) {
 // Demander à l'utilisateur de saisir son nom
 let nomUtilisateur = prompt("Veuillez saisir votre nom :");
 
-// Afficher le message de bienvenue avec le nom
 console.log(`Bienvenue ${nomUtilisateur} !`);
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -34,14 +35,16 @@ for (let i = 0; i <= 100; i++) {
 ///////////////////////////////////////////////////////////////////////////////
 
 // Exercice 3
+// Demande à l'utilisateur de saisir le premier nombre et le convertit en nombre à virgule (float)
 let premierNombre = parseFloat(prompt("Veuillez saisir le premier nombre :"));
 let deuxiemeNombre = parseFloat(prompt("Veuillez saisir le deuxième nombre :"));
 
+// Vérifie si les saisies des variable sont des nombres valides
 if (!isNaN(premierNombre) && !isNaN(deuxiemeNombre)) {
-  let somme = premierNombre + deuxiemeNombre;
-  console.log(`${premierNombre} + ${deuxiemeNombre} = ${somme}`);
+    let somme = premierNombre + deuxiemeNombre;
+    console.log(`${premierNombre} + ${deuxiemeNombre} = ${somme}`);
 } else {
-  console.log("Veuillez saisir des nombres valides.");
+    console.log("Veuillez saisir des nombres valides.");
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -103,12 +106,13 @@ if (nombre1 > 0) {
 let nombre2 = parseInt(prompt("Veuillez saisir un nombre :"));
 
 console.log(`Table de multiplication de ${nombre2}:`);
+// Boucle de 1 à 10 pour afficher la table de multiplication de nombre2
 for (let i = 1; i <= 10; i++) {
-  let resultat = nombre2 * i;
-  console.log(`${nombre2} x ${i} = ${resultat}`);
+    let resultat = nombre2 * i;
+    console.log(`${nombre2} x ${i} = ${resultat}`);
 }
 
 // Exercice 9
 let monTableau = [1, 2, 3, 4, 5];
-let resultat = sommeTableau(monTableau);
+let resultat = sommeTableau(monTableau); // Utilisation de la fonction sommeTableau()
 console.log("La somme du tableau est :", resultat);
