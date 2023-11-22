@@ -26,7 +26,6 @@ function decimalToBase(decimalNumber, base) {
 ///////////////////////////////////////////////////////////////////////////////
 
 // Exercice 1
-// Demander un nombre à l'utilisateur 
 let n = parseInt(prompt("Veuillez saisir un nombre N :"));
 
 // Vérifie si la saisie est un nombre valide
