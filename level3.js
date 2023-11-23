@@ -2,9 +2,9 @@ const prompt = require('prompt-sync')();
 
 ///////////////////////////////////////////////////////////////////////////////
 
-// Fonction pour convertir un nombre décimal en une base spécifiée
+// Fonction exercice 3
 function decimalToBase(decimalNumber, base) {
-    // Si le nombre est 0, le resultat dans n'importe quelle base est simplement '0'
+    // Si le nombre est 0 le resultat dans n'importe quelle base est simplement '0'
     if (decimalNumber === 0) {
         return '0';
     }
@@ -12,14 +12,42 @@ function decimalToBase(decimalNumber, base) {
     let result = '';
     // Boucle tant que le nombre décimal est supérieur à 0
     while (decimalNumber > 0) {
-        // Obtenir le reste de la division par la base
+        // Obtient le reste de la division par la base
         let remainder = decimalNumber % base;
-        // Ajouter le reste au résultat
+        // Ajout le reste au résultat
         result = remainder + result;
-        // Diviser le nombre décimal par la base pour le prochain chiffre
+        // Divise le nombre décimal par la base pour le prochain chiffre
         decimalNumber = Math.floor(decimalNumber / base);
     }
   
+    return result;
+}
+
+///////////////////////////////////////////////////////////////////////////////
+
+// Fonction exercice 4
+function decimalToRoman(decimalNumber) {
+    // Tableaux associant les valeurs décimale et les chiffre romain correspondant
+    let decimalValues = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+    let romanNumerals = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I'];
+
+    // Vérifie si le nombre est dans la plage valide pour les chiffres romains
+    if (decimalNumber <= 0 || decimalNumber >= 4000) {
+        return "Le nombre n'est pas dans la plage valide pour les chiffres romains.";
+    }
+
+    let result = '';
+
+    for (let i = 0; i < decimalValues.length; i++) {
+        // Tant que le nombre en base 10 est plus grand ou égal à la valeur décimale actuelle
+        while (decimalNumber >= decimalValues[i]) {
+            // Ajout du chiffre romain correspondant au résultat
+            result += romanNumerals[i];
+            // Soustrait la valeur décimale du nombre en base 10
+            decimalNumber -= decimalValues[i];
+        }
+    }
+
     return result;
 }
 
@@ -96,7 +124,14 @@ if (!isNaN(nombreDeTentatives)) {
 
 // Exercice 3
 // Test de la conversion en base quelconque, j'ai utiliser la base 16 pour l'exemple
-// Normalement si on met 2 ca convertie en binaire
 const decimalInputForBase = 255;
-const baseOutput = decimalToBase(decimalInputForBase, 16);
+// Normalement si on met 2 cela convertie en binaire
+const baseOutput = decimalToBase(decimalInputForBase, 16); // Utilise la fonction decimalToBase() ecrit en haut
 console.log(`${decimalInputForBase} en base 16 : ${baseOutput}`);
+
+///////////////////////////////////////////////////////////////////////////////
+
+// Exercice 4
+const decimalInputForRoman = 1984;
+const romanOutput = decimalToRoman(decimalInputForRoman); // Utilise la fonction decimalToRoman() ecrit en haut
+console.log(`${decimalInputForRoman} en chiffres romains : ${romanOutput}`);
