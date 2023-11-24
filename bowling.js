@@ -29,17 +29,27 @@ function playBowlingGame(pinsArray) {
         let totalScore = 0;
         let rollIndex = 0;
 
+        // Parcourt chaque cadre de la partie 
         for (let currentFrame = 1; currentFrame <= frame; currentFrame++) {
-            // Traitement des cas spéciaux pour les strikes et les spares
+            // Vérifie s'il s'agit d'un strike
             if (rolls[rollIndex] === 10) {
+                // Ajoute 10 points plus le bonus pour le strike au score total
                 totalScore += 10 + bonusForStrike(rollIndex);
+                // Passe au prochain lancer
                 rollIndex += 1;
-            } else if (rolls[rollIndex] + rolls[rollIndex + 1] === 10) {
+            } 
+            // Vérifie s'il s'agit d'un spare (toutes les quilles tombées en deux lancers)
+            else if (rolls[rollIndex] + rolls[rollIndex + 1] === 10) {
+                // Ajoute 10 points plus le bonus pour le spare au score total
                 totalScore += 10 + bonusForSpare(rollIndex);
+                // Passe aux deux prochains lancers
                 rollIndex += 2;
-            } else {
-                // Traitement normal pour les lancers
+            } 
+            // Cas normal où aucune quille n'est tombée au premier lancer et le total des deux lancers est inférieur à 10
+            else {
+                // Ajoute le total des quilles tombées au score total
                 totalScore += rolls[rollIndex] + rolls[rollIndex + 1];
+                // Passe aux deux prochains lancers
                 rollIndex += 2;
             }
         }
@@ -59,7 +69,7 @@ function playBowlingGame(pinsArray) {
 
     // Parcour tous les lancers
     for (let pins of pinsArray) {
-        // Traiter le lancer
+        // Traite le lancer
         processRoll(pins);
     }
 

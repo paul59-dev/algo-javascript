@@ -58,15 +58,22 @@ let n = parseInt(prompt("Veuillez saisir un nombre N :"));
 
 // Vérifie si la saisie est un nombre valide
 if (!isNaN(n)) {
-    // Affiche les nombres de 0 à N avec FizzBuzz
+    // Parcourir les nombres de 1 à n inclus
     for (let i = 1; i <= n; i++) {
+        // Verifie si le nombre est divisible par 3 et 5 (FIZZBUZZ)
         if (i % 3 === 0 && i % 5 === 0) {
             console.log("FIZZBUZZ");
-        } else if (i % 3 === 0) {
+        } 
+        // Verifie si le nombre est divisible par 3 uniquement (FIZZ)
+        else if (i % 3 === 0) {
             console.log("FIZZ");
-        } else if (i % 5 === 0) {
+        } 
+        // Verifie si le nombre est divisible par 5 uniquement (BUZZ)
+        else if (i % 5 === 0) {
             console.log("BUZZ");
-        } else {
+        } 
+        // Si le nombre n'est pas divisible ni par 3 ni par 5, affiche le nombre
+        else {
             console.log(i);
         }
     }

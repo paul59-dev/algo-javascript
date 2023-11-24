@@ -18,9 +18,10 @@ function sommeTableau(tableau) {
 }
 
 ///////////////////////////////////////////////////////////////////////////////
+
 // Exercice 1
 
-// Demander à l'utilisateur de saisir son nom
+// Demande à l'utilisateur de saisir son nom
 let nomUtilisateur = prompt("Veuillez saisir votre nom :");
 
 console.log(`Bienvenue ${nomUtilisateur} !`);
@@ -52,13 +53,18 @@ if (!isNaN(premierNombre) && !isNaN(deuxiemeNombre)) {
 // Exercice 4
 let age = parseInt(prompt("Veuillez entrer l'âge de l'enfant :"));
 
+// Vérifie la categorie en fonction de l'age
 if (age >= 12) {
+  // Si l'age est supérieur ou égal à 12, retourne la catégorie "Cadet"
   console.log("Cadet");
 } else if (age >= 10) {
+  // Si l'age est compris entre 10 et 11 inclus, retourne la catégorie "Minime"
   console.log("Minime");
 } else if (age >= 8) {
+  // Si l'age est compris entre 8 et 9 inclus, retourne la catégorie "Pupille"
   console.log("Pupille");
 } else {
+  // Si l'age est inférieur à 8, retourne catégorie "Poussin"
   console.log("Poussin");
 }
 
@@ -81,7 +87,7 @@ if (prixFabrication > prixVente) {
 // Exercice 6
 let nombre = parseInt(prompt("Veuillez saisir un nombre :"));
 
-if (nombre % 2 === 0) {
+if (nombre % 2 === 0) { // Si le reste de la division par 2 est zéro, le nombre est pair
   console.log("Le nombre est pair.");
 } else {
   console.log("Le nombre est impair.");
@@ -94,7 +100,7 @@ let nombre1 = parseFloat(prompt("Veuillez saisir un nombre :"));
 
 if (nombre1 > 0) {
   console.log("Le nombre est positif.");
-} else if (nombre1 < 0) {
+} else if (nombre1 < 0) { // Sinon si le nombre est inferieur à 0 alors il est négatif
   console.log("Le nombre est négatif.");
 } else {
   console.log("Le nombre est nul.");
